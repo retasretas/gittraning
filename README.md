@@ -71,3 +71,24 @@ git config --global --list
 ## 必見スライド
 
 <iframe src="//www.slideshare.net/slideshow/embed_code/15276118" width="425" height="355" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe> <div style="margin-bottom:5px"> <strong> <a href="//www.slideshare.net/kotas/git-15276118" title="こわくない Git" target="_blank">こわくない Git</a> </strong> from <strong><a href="//www.slideshare.net/kotas" target="_blank">Kota Saito</a></strong> </div>
+
+## してはいけないこと
+
+### push済のコミットのrebase
+
+```
+git rebase
+```
+
+手元にしかないコミットの改変は自由だが、公開済みコミットの改変はしてはいけない。他の人がpullやpushできなくなる可能性あり。
+
+### push済コミットへのamend（直前コミット修正）
+
+```
+git commit --amend
+```
+
+理由は上に同じ。  
+sourcetreeでは`コミットオプション　＞　直前のコミットを修正`に当たる。
+
+- [ ] 画像4
